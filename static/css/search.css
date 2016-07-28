@@ -1,0 +1,8 @@
+.search-box {
+    margin-top: -10px;
+    padding-top: 1px;
+}
+
+#results td:first-letter {
+    text-transform: capitalize;
+}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static "css/search.css" %}">
+{% endblock %}
+{% block js %}
+    {{ block.super }}
+    <script src="{%  static "js/search.js" %}"></script>
+{% endblock %}
+{% block main_container %}
+    <div class="jumbotron search-box">
+        <h1><small>Vehicle search</small></h1>
+        <form action="#" class="form-horizontal">
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1"><i class="glyphicon glyphicon-search"></i></span>
+                <input type="text" id="search" class="form-control" placeholder="Type to search" aria-describedby="search">
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <p id="no-results" style="display: none;">Uhh oh! No results, sorry.</p>
+            <table id="results" class="table table-bordered table-striped table-hover" style="display: none;">
+                <thead>
+                <th>Type</th>
+                <th>Automaker</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Mileage</th>
+                <th>Motor potency</th>
+                <th>Action</th>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <nav aria-label="Page navigation" id="pagination" class="text-center" style="display: none">
+                <ul class="pagination">
+                    <li>
+                        <a href="#" aria-label="Previous" id="goPrevious">
+                            <span aria-hidden="true">&laquo; Previous</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Next"  id="goNext">
+                            <span aria-hidden="true">&raquo; Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+{% endblock %}
